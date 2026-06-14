@@ -99,7 +99,7 @@ export default function AboutPage() {
 
           {/* Resume download */}
           <a
-            href="/Leo_Leong_Resume.pdf"
+            href="/Leo_Leong.pdf"
             download
             className="inline-flex items-center gap-2 text-sm border rounded-lg px-4 py-2.5 transition-colors"
             style={{
