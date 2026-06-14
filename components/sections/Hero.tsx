@@ -43,9 +43,8 @@ export function Hero() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium leading-tight mb-4">
           Leo Leong
           <br />
-          <span style={{ color: "var(--ac)" }}>Software Engineer</span>
+          <span style={{ color: "var(--ac)" }}>Aspiring Software Engineer</span>
           <br />
-          at heart.
         </h1>
 
         <p className="text-base sm:text-lg mb-1" style={{ color: "var(--t2)" }}>
