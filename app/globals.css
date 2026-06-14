@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source "../components/**/*.tsx";
+@source "../app/**/*.tsx";
 
 :root {
   --ac: #22d3ee;
@@ -151,3 +153,31 @@ body {
 .glow-text {
   text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
 }
+
+/* ── Tailwind v4 base overrides ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--t1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Tailwind v4 removes padding/margin defaults — restore nav & layout */
+.sticky { position: sticky; }
+.antialiased { -webkit-font-smoothing: antialiased; }

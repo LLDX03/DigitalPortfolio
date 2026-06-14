@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ExternalLink, GitBranch, ArrowRight, Lock } from "lucide-react";
 import { projects } from "@/data";
