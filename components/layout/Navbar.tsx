@@ -4,54 +4,50 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { navLinks, siteConfig } from "@/data";
-import { cn } from "@/lib/utils";
+import { navLinks } from "@/data";
 
 export function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header
-      className="sticky top-0 z-50 border-b"
-      style={{
-        background: "rgba(10,14,23,0.97)",
-        backdropFilter: "blur(12px)",
-        borderColor: "var(--ac-border)",
-      }}
-    >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+    <header style={{
+      position: "sticky", top: 0, zIndex: 50,
+      background: "rgba(10,14,23,0.97)",
+      backdropFilter: "blur(12px)",
+      borderBottom: "0.5px solid var(--ac-border)",
+    }}>
+      <nav style={{
+        maxWidth: "72rem", margin: "0 auto",
+        padding: "0 1.5rem",
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        height: "56px",
+      }}>
         {/* Logo */}
-        <Link
-          href="/"
-          className="font-mono text-sm shrink-0 transition-opacity hover:opacity-80"
-          style={{ color: "var(--ac)", fontFamily: "var(--mono)" }}
-          aria-label="Leo Leong — home"
-        >
+        <Link href="/" style={{
+          color: "var(--ac)", fontFamily: "var(--mono)",
+          fontSize: "13px", flexShrink: 0, textDecoration: "none",
+        }}>
           &lt;<span style={{ color: "var(--t2)" }}>Leo</span>Leong /&gt;
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-1">
+        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           {navLinks.map((link) => {
-            const isActive =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.href);
+            const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "text-xs px-3 py-1.5 rounded-md border-b border-transparent transition-all duration-150",
-                  isActive
-                    ? "border-b-[var(--ac)]"
-                    : "hover:border-b-[var(--ac)]"
-                )}
-                style={{
-                  color: isActive ? "var(--ac)" : "var(--t2)",
-                  borderBottomColor: isActive ? "var(--ac)" : "transparent",
-                }}
+              <Link key={link.href} href={link.href} style={{
+                color: isActive ? "var(--ac)" : "var(--t2)",
+                fontSize: "13px",
+                padding: "5px 12px",
+                borderRadius: "6px",
+                borderBottom: isActive ? "1.5px solid var(--ac)" : "1.5px solid transparent",
+                transition: "color 0.15s, border-color 0.15s",
+                whiteSpace: "nowrap",
+                textDecoration: "none",
+              }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--ac)"; }}
+              onMouseLeave={(e) => { if (!isActive) (e.currentTarget as HTMLElement).style.color = "var(--t2)"; }}
               >
                 {link.label}
               </Link>
@@ -60,74 +56,40 @@ export function Navbar() {
         </div>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
-          <Link
-            href="/contact"
-            className="text-xs font-medium border rounded-md px-3 py-1.5 transition-colors duration-150"
-            style={{
-              color: "var(--ac)",
-              borderColor: "var(--ac-border)",
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.background = "var(--ac-glow)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.background = "transparent")
-            }
-          >
-            Hire Me
-          </Link>
-        </div>
-
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden p-2 rounded-md transition-colors"
-          style={{ color: "var(--t2)" }}
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          aria-expanded={mobileOpen}
+        <Link href="/contact" style={{
+          color: "var(--ac)", fontSize: "12px", fontWeight: 500,
+          border: "1px solid var(--ac-border)", borderRadius: "6px",
+          padding: "5px 14px", flexShrink: 0, textDecoration: "none",
+        }}
+        onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "var(--ac-glow)"; }}
+        onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; }}
         >
-          {mobileOpen ? <X size={18} /> : <Menu size={18} />}
-        </button>
+          Hire Me
+        </Link>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — hidden on desktop via inline style logic if needed */}
       {mobileOpen && (
-        <div
-          className="md:hidden border-t px-4 py-3 flex flex-col gap-1"
-          style={{
-            background: "var(--bg2)",
-            borderColor: "var(--b1)",
-          }}
-        >
+        <div style={{
+          background: "var(--bg2)", borderTop: "0.5px solid var(--b1)",
+          padding: "0.75rem 1.5rem", display: "flex", flexDirection: "column", gap: "0.25rem",
+        }}>
           {navLinks.map((link) => {
-            const isActive =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.href);
+            const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
-              <Link
-                key={link.href}
-                href={link.href}
+              <Link key={link.href} href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm py-2 px-3 rounded-md transition-colors"
                 style={{
                   color: isActive ? "var(--ac)" : "var(--t2)",
+                  fontSize: "14px", padding: "8px 12px", borderRadius: "6px",
                   background: isActive ? "var(--ac-glow)" : "transparent",
+                  textDecoration: "none",
                 }}
               >
                 {link.label}
               </Link>
             );
           })}
-          <Link
-            href="/contact"
-            onClick={() => setMobileOpen(false)}
-            className="mt-2 text-sm font-medium text-center border rounded-md py-2 px-3"
-            style={{ color: "var(--ac)", borderColor: "var(--ac-border)" }}
-          >
-            Hire Me
-          </Link>
         </div>
       )}
     </header>
