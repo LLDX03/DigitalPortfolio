@@ -24,18 +24,20 @@ export function Hero() {
 
       <div className="relative max-w-6xl mx-auto">
         {/* Availability badge */}
-        <div className="inline-flex items-center gap-2 mb-6">
+        <div className="inline-flex items-center gap-2 mb-6 max-w-full">
           <div
-            className="inline-flex items-center gap-2 rounded px-3 py-1.5 border text-xs font-mono"
+            className="inline-flex items-center gap-2 rounded px-3 py-1.5 border text-xs font-mono max-w-full"
             style={{
               background: "var(--ac-glow)",
               borderColor: "var(--ac-border)",
               color: "var(--ac)",
               fontFamily: "var(--mono)",
+              lineHeight: 1.35,
             }}
           >
-            <span className="pulse-dot" aria-hidden="true" />
-            {siteConfig.availability}
+            <span className="pulse-dot shrink-0" aria-hidden="true" />
+            <span className="min-w-0 ">
+              {siteConfig.availability}</span>
           </div>
         </div>
 
@@ -45,7 +47,6 @@ export function Hero() {
           <br />
           <span style={{ color: "var(--ac)" }}>Software Engineer </span>
           <br />
-          Noidea
         </h1>
 
         <p className="text-base sm:text-lg mb-1" style={{ color: "var(--t2)" }}>
@@ -55,22 +56,22 @@ export function Hero() {
           className="text-xs font-mono mb-6"
           style={{ color: "var(--t3)", fontFamily: "var(--mono)" }}
         >
-          // Cybersecurity &amp; Digital Forensics Graduate ·{" "}
+          {/* // Cybersecurity &amp; Digital Forensics Graduate ·{" "}
           <span style={{ color: "var(--ac)" }}>
             Aspiring Computer Science Student
-          </span>
+          </span> */}
         </p>
 
         <p
           className="text-sm leading-relaxed max-w-xl mb-8"
           style={{ color: "var(--t2)" }}
         >
-          Diploma graduate from Temasek Polytechnic with hands-on experience
+          Cybersecurity & Digital forensic Diploma graduate from Temasek Polytechnic with hands-on experience
           building secure, full-stack applications. Interned at{" "}
           <span style={{ color: "var(--t1)", fontWeight: 500 }}>
             Trend Micro
           </span>
-          . Currently serving NS — building projects in my own time.
+          . Currently serving NS and building projects in my own time.
         </p>
 
         {/* CTAs */}

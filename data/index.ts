@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: "Leo Leong",
   fullName: "Leong Ding Xuan, Leo",
-  tagline: "Cybersecurity by Training, Software Engineering by Passion",
+  tagline: "Cybersecurity by Training — Software Engineering by Passion",
   subTagline:
-    "Cybersecurity & Digital Forensics graduate · Aspiring Computer Science student",
+    "",
   description:
-    "Diploma graduate from Temasek Polytechnic with hands-on experience building secure, full-stack applications. Interned at Trend Micro. Currently serving NS — building production-grade projects in my own time.",
+    "Cybersecurity & Digital forensic Diploma graduate from Temasek Polytechnic with hands-on experience building secure, full-stack applications. Interned at Trend Micro. Currently serving NS — building production-grade projects in my own time.",
   availability: "Available for full-time work from 2nd August 2026",
   email: "leongdingxuan@gmail.com",
   phone: "(65) 90065959",
