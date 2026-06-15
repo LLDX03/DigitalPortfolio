@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Leo Leong",
-  fullName: "Leo Leong Ding Xuan",
-  tagline: "Specialised in cybersecurity — software engineer at heart.",
+  fullName: "Leong Ding Xuan, Leo",
+  tagline: "Cybersecurity by Training, Software Engineering by Passion",
   subTagline:
     "Cybersecurity & Digital Forensics graduate · Aspiring Computer Science student",
   description:

@@ -43,9 +43,9 @@ export function Hero() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium leading-tight mb-4">
           Leo Leong
           <br />
-          <span style={{ color: "var(--ac)" }}>Aspiring </span>
+          <span style={{ color: "var(--ac)" }}>Software Engineer </span>
           <br />
-          Software Engineer
+          Noidea
         </h1>
 
         <p className="text-base sm:text-lg mb-1" style={{ color: "var(--t2)" }}>
@@ -55,9 +55,9 @@ export function Hero() {
           className="text-xs font-mono mb-6"
           style={{ color: "var(--t3)", fontFamily: "var(--mono)" }}
         >
-          // Cybersecurity &amp; Digital Forensics ·{" "}
+          // Cybersecurity &amp; Digital Forensics Graduate ·{" "}
           <span style={{ color: "var(--ac)" }}>
-            Aspiring Computer Science Graduate
+            Aspiring Computer Science Student
           </span>
         </p>
 
@@ -70,8 +70,7 @@ export function Hero() {
           <span style={{ color: "var(--t1)", fontWeight: 500 }}>
             Trend Micro
           </span>
-          . Currently serving NS — building production-grade projects in my own
-          time.
+          . Currently serving NS — building projects in my own time.
         </p>
 
         {/* CTAs */}
