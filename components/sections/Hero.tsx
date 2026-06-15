@@ -33,6 +33,8 @@ export function Hero() {
               color: "var(--ac)",
               fontFamily: "var(--mono)",
               lineHeight: 1.35,
+              maxWidth: "100%",
+              padding: "0.375rem 0.875rem",
             }}
           >
             <span className="pulse-dot shrink-0" aria-hidden="true" />

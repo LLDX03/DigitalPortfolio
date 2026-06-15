@@ -12,34 +12,34 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const specialties = [
   {
-    icon: Shield,
-    name: "Secure Development",
-    detail: "JWT, bcrypt, OWASP Top 10, CSP, rate limiting",
-  },
-  {
     icon: SquareCode,
-    name: "Backend Engineering",
-    detail: "Node.js, Express, REST APIs, PostgreSQL",
+    name: "Backend & APIs",
+    detail: "Node.js, Express, REST APIs, Prisma, Sequelize",
   },
   {
-    icon: Bug,
-    name: "Penetration Testing",
-    detail: "Burp Suite, Nmap, Metasploit, Kali Linux",
-  },
-  {
-    icon: Cloud,
-    name: "Cloud & IoT",
-    detail: "Azure, MQTT, SSL/TLS, Nginx, deployment",
-  },
-  {
-    icon: Fingerprint,
+    icon: Shield,
     name: "Digital Forensics",
     detail: "FTK Imager, Autopsy, evidence handling",
   },
   {
+    icon: Bug,
+    name: "Penetration Testing",
+    detail: "Nmap, Burp Suite, Metasploit, Kali Linux",
+  },
+  {
+    icon: Cloud,
+    name: "Cloud, IoT & DevOps",
+    detail: "Azure, MQTT, Docker, Nginx, systemd, deployment",
+  },
+  {
+    icon: Fingerprint,
+    name: "Data & Machine Learning",
+    detail: "Python, pandas, scikit-learn, Streamlit, visualisation",
+  },
+  {
     icon: Layers,
-    name: "Full Stack",
-    detail: "JavaScript, HTML/CSS, React (learning), MySQL",
+    name: "Programming Languages",
+    detail: "TypeScript, JavaScript, Python, Java, PHP, SQL",
   },
 ];
 
