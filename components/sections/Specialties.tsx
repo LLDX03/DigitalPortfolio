@@ -14,32 +14,32 @@ const specialties = [
   {
     icon: SquareCode,
     name: "Backend & APIs",
-    detail: "Node.js, Express, REST APIs, Prisma, Sequelize",
+    /*detail: "Node.js, Express, REST APIs, Prisma, Sequelize",*/
   },
   {
     icon: Shield,
     name: "Digital Forensics",
-    detail: "FTK Imager, Autopsy, evidence handling",
+    /*detail: "FTK Imager, Autopsy, evidence handling",*/
   },
   {
     icon: Bug,
     name: "Penetration Testing",
-    detail: "Nmap, Burp Suite, Metasploit, Kali Linux",
+    /*detail: "Nmap, Burp Suite, Metasploit, Kali Linux",*/
   },
   {
     icon: Cloud,
     name: "Cloud, IoT & DevOps",
-    detail: "Azure, MQTT, Docker, Nginx, systemd, deployment",
+    /*detail: "Azure, MQTT, Docker, Nginx, systemd, deployment",*/
   },
   {
     icon: Fingerprint,
     name: "Data & Machine Learning",
-    detail: "Python, pandas, scikit-learn, Streamlit, visualisation",
+    /* detail: "Python, pandas, scikit-learn, Streamlit, visualisation",*/
   },
   {
     icon: Layers,
     name: "Programming Languages",
-    detail: "TypeScript, JavaScript, Python, Java, PHP, SQL",
+    /* detail: "TypeScript, JavaScript, Python, Java, PHP, SQL", */
   },
 ];
 
