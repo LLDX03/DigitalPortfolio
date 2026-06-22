@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, ArrowUpRight, Download } from "lucide-react";
 import { siteConfig, projects } from "@/data";
@@ -373,6 +374,17 @@ function ProjectCard({ project, index }: { project: (typeof projects)[0]; index:
         {String(index + 1).padStart(2, "0")}
       </p>
       <div>
+        {project.imageUrl && (
+          <div style={{ marginBottom: "0.875rem", borderRadius: "6px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.05)" }}>
+            <Image
+              src={project.imageUrl}
+              alt={project.title}
+              width={600}
+              height={338}
+              style={{ width: "100%", height: "auto", display: "block" }}
+            />
+          </div>
+        )}
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap", marginBottom: "0.4rem" }}>
           <span style={{ fontSize: "0.9375rem", fontWeight: 500, color: "#e8e3db" }}>{project.title}</span>
           {project.githubUrl && (

@@ -49,6 +49,7 @@ export interface Project {
   featured: boolean;
   sideProject?: boolean;
   tagline?: string;
+  imageUrl?: string;
   codeSnippet?: { lang: string; code: string };
 }
 
@@ -99,6 +100,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/LLDX03/cafe-menu",
     featured: true,
     sideProject: true,
+    imageUrl: "/projects/leos-cafe.png",
     tagline: "Full-stack café platform built during NS — JWT auth, loyalty tiers, QR redemptions, table reservations, and SendGrid email verification.",
     codeSnippet: {
       lang: "javascript",
@@ -145,6 +147,7 @@ const authMiddleware = (req, res, next) => {
     githubUrl: "https://github.com/LLDX03/HDB-Resale-Price-Prediction",
     featured: true,
     sideProject: true,
+    imageUrl: "/projects/hdb-predictor.png",
   },
   {
     id: "ecosaver",
