@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { timeline } from "@/data";
+import { PageNav } from "@/components/layout/PageNav";
 
 const experiences = [
   {
@@ -49,28 +50,8 @@ export default function AboutPage() {
       />
 
       <div style={{ background: "#15161A", minHeight: "100vh", fontFamily: "var(--font-sans, system-ui, sans-serif)", position: "relative", zIndex: 1 }}>
-        <div style={{ maxWidth: "720px", margin: "0 auto", padding: "5rem 1.5rem 6rem" }}>
-
-          {/* Back */}
-          <Link
-            href="/"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.375rem",
-              fontSize: "0.75rem",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              color: "#4d4944",
-              textDecoration: "none",
-              marginBottom: "3.5rem",
-              transition: "color 0.15s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#d98e4f")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#4d4944")}
-          >
-            ← Back
-          </Link>
+        <PageNav />
+        <div style={{ maxWidth: "720px", margin: "0 auto", padding: "4rem 1.5rem 6rem" }}>
 
           {/* Heading */}
           <h1

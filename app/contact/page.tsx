@@ -1,19 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import {
-  Mail,
-  GitBranch,
-  Link2,
-  Send,
-  Lock,
-  CheckCircle2,
-  AlertCircle,
-  CalendarCheck2,
-} from "lucide-react";
+import { useState, useEffect } from "react";
+import { Send, ArrowUpRight } from "lucide-react";
 import { siteConfig } from "@/data";
-import { SectionHeader } from "@/components/ui/SectionHeader";
+import { PageNav } from "@/components/layout/PageNav";
 
 interface FormState {
   name: string;
@@ -42,20 +32,54 @@ function validate(form: FormState): FieldError {
   return errors;
 }
 
+const inputBase: React.CSSProperties = {
+  width: "100%",
+  background: "rgba(255,255,255,0.03)",
+  border: "1px solid rgba(255,255,255,0.07)",
+  borderRadius: "6px",
+  padding: "10px 14px",
+  fontSize: "0.9375rem",
+  color: "#f0ece4",
+  fontFamily: "inherit",
+  outline: "none",
+  transition: "border-color 0.15s",
+};
+
+const inputError: React.CSSProperties = {
+  ...inputBase,
+  borderColor: "rgba(239,68,68,0.4)",
+};
+
+function IconGitHub() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+    </svg>
+  );
+}
+
+function IconLinkedIn() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.2 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
+
 export default function ContactPage() {
-  const [form, setForm] = useState<FormState>({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [mouse, setMouse] = useState({ x: -1000, y: -1000 });
+  const [form, setForm] = useState<FormState>({ name: "", email: "", subject: "", message: "" });
   const [errors, setErrors] = useState<FieldError>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [serverMessage, setServerMessage] = useState("");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  useEffect(() => {
+    const move = (e: MouseEvent) => setMouse({ x: e.clientX, y: e.clientY });
+    window.addEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", move);
+  }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
     if (errors[name as keyof FieldError]) {
@@ -92,281 +116,201 @@ export default function ContactPage() {
     }
   };
 
-  const inputStyle = (hasError: boolean) => ({
-    width: "100%",
-    background: "var(--bg3)",
-    border: `0.5px solid ${hasError ? "rgba(239,68,68,0.5)" : "var(--b1)"}`,
-    borderRadius: "8px",
-    padding: "9px 12px",
-    fontSize: "13px",
-    color: "var(--t1)",
-    fontFamily: "inherit",
-    outline: "none",
-  });
-
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-      <SectionHeader title="Get in touch" sub="open to roles from August 2026" />
+    <>
+      <div
+        aria-hidden="true"
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: "none",
+          background: `radial-gradient(700px at ${mouse.x}px ${mouse.y}px, rgba(217,142,79,0.07) 0%, transparent 75%)`,
+        }}
+      />
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-        {/* Left — contact info */}
-        <div className="lg:col-span-2 space-y-4">
-          {[
-            {
-              icon: Link2,
-              label: "LinkedIn",
-              value: "leoleongdingxuan",
-              href: siteConfig.linkedin,
-            },
-            {
-              icon: GitBranch,
-              label: "GitHub",
-              value: "LLDX03",
-              href: siteConfig.github,
-            },
-            {
-              icon: Mail,
-              label: "Email",
-              value: siteConfig.email,
-              href: `mailto:${siteConfig.email}`,
-            },
-          ].map(({ icon: Icon, label, value, href }) => (
-            <Link
-              key={label}
-              href={href}
-              target={href.startsWith("http") ? "_blank" : undefined}
-              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="flex items-center gap-3 rounded-xl border p-4 transition-colors duration-150 group"
-              style={{ background: "var(--bg3)", borderColor: "var(--b1)" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.borderColor = "var(--ac-border)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.borderColor = "var(--b1)")
-              }
-            >
-              <Icon size={18} style={{ color: "var(--ac)" }} aria-hidden="true" />
-              <div>
-                <p className="text-xs" style={{ color: "var(--t3)" }}>
-                  {label}
-                </p>
-                <p className="text-sm" style={{ color: "var(--t1)" }}>
-                  {value}
-                </p>
-              </div>
-            </Link>
-          ))}
+      <div style={{ background: "#15161A", minHeight: "100vh", fontFamily: "var(--font-sans, system-ui, sans-serif)", position: "relative", zIndex: 1 }}>
+        <PageNav />
 
-          {/* Availability card */}
-          <div
-            className="rounded-xl border p-4"
+        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "4rem 1.5rem 6rem" }}>
+          {/* Heading */}
+          <h1
             style={{
-              background: "rgba(34,211,238,0.04)",
-              borderColor: "var(--ac-border)",
+              fontFamily: "var(--font-serif, Georgia, serif)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(2.25rem, 6vw, 3.5rem)",
+              lineHeight: 1.1,
+              color: "#f0ece4",
+              letterSpacing: "-0.02em",
+              marginBottom: "1rem",
             }}
           >
-            <div className="flex items-center gap-2 mb-2">
-              <CalendarCheck2 size={15} style={{ color: "var(--ac)" }} aria-hidden="true" />
-              <p className="text-xs font-mono" style={{ color: "var(--ac)", fontFamily: "var(--mono)" }}>
-                // availability
-              </p>
+            Get in touch
+          </h1>
+          <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "#5c5955", marginBottom: "4rem", maxWidth: "48ch" }}>
+            Open to software engineering roles from August 2026. Happy to chat about internships or project collaborations now.
+          </p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "4rem" }}>
+            {/* Social links row */}
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem" }}>
+              {[
+                { icon: <IconLinkedIn />, label: "LinkedIn", value: "leoleongdingxuan", href: siteConfig.linkedin },
+                { icon: <IconGitHub />, label: "GitHub", value: "LLDX03", href: siteConfig.github },
+                { icon: null, label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
+              ].map(({ icon, label, value, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    textDecoration: "none",
+                    color: "#5c5955",
+                    fontSize: "0.875rem",
+                    transition: "color 0.15s",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#d98e4f")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#5c5955")}
+                >
+                  {icon}
+                  <span style={{ fontWeight: 400, color: "inherit" }}>{value}</span>
+                  <ArrowUpRight size={12} />
+                </a>
+              ))}
             </div>
-            <p className="text-sm leading-relaxed" style={{ color: "var(--t2)" }}>
-              Currently serving NS. Available for full-time software engineering
-              roles from{" "}
-              <span style={{ color: "var(--t1)", fontWeight: 500 }}>
-                2nd August 2026
-              </span>
-              . Open to internships and project collaborations now.
-            </p>
+
+            {/* Divider */}
+            <div style={{ height: 1, background: "rgba(255,255,255,0.05)", margin: "-2rem 0" }} />
+
+            {/* Form */}
+            {status === "success" ? (
+              <div style={{ paddingTop: "1rem" }}>
+                <p style={{
+                  fontFamily: "var(--font-serif, Georgia, serif)",
+                  fontStyle: "italic",
+                  fontSize: "1.5rem",
+                  color: "#f0ece4",
+                  marginBottom: "0.75rem",
+                }}>
+                  Message sent.
+                </p>
+                <p style={{ fontSize: "0.875rem", color: "#5c5955", marginBottom: "2rem" }}>
+                  {serverMessage} I&apos;ll get back to you soon.
+                </p>
+                <button
+                  onClick={() => setStatus("idle")}
+                  style={{
+                    fontSize: "0.8125rem",
+                    color: "#d98e4f",
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    padding: 0,
+                    textDecoration: "underline",
+                    textUnderlineOffset: "3px",
+                  }}
+                >
+                  Send another
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} noValidate aria-label="Contact form" style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                  <Field label="Name" id="name" error={errors.name}>
+                    <input
+                      id="name" name="name" type="text"
+                      value={form.name} onChange={handleChange}
+                      placeholder="Your name"
+                      style={errors.name ? inputError : inputBase}
+                      autoComplete="name"
+                    />
+                  </Field>
+                  <Field label="Email" id="email" error={errors.email}>
+                    <input
+                      id="email" name="email" type="email"
+                      value={form.email} onChange={handleChange}
+                      placeholder="your@email.com"
+                      style={errors.email ? inputError : inputBase}
+                      autoComplete="email"
+                    />
+                  </Field>
+                </div>
+
+                <Field label="Subject" id="subject" error={errors.subject}>
+                  <input
+                    id="subject" name="subject" type="text"
+                    value={form.subject} onChange={handleChange}
+                    placeholder="What's this about?"
+                    style={errors.subject ? inputError : inputBase}
+                  />
+                </Field>
+
+                <Field label="Message" id="message" error={errors.message}>
+                  <textarea
+                    id="message" name="message"
+                    value={form.message} onChange={handleChange}
+                    placeholder="What's on your mind?"
+                    rows={6}
+                    style={{ ...(errors.message ? inputError : inputBase), resize: "vertical" }}
+                  />
+                </Field>
+
+                {status === "error" && (
+                  <p style={{ fontSize: "0.8125rem", color: "#f87171" }}>{serverMessage}</p>
+                )}
+
+                <div>
+                  <button
+                    type="submit"
+                    disabled={status === "loading"}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.5rem",
+                      fontSize: "0.875rem",
+                      fontWeight: 500,
+                      color: "#15161A",
+                      background: "#d98e4f",
+                      border: "none",
+                      borderRadius: "6px",
+                      padding: "0.625rem 1.5rem",
+                      cursor: status === "loading" ? "not-allowed" : "pointer",
+                      opacity: status === "loading" ? 0.6 : 1,
+                      transition: "opacity 0.15s",
+                    }}
+                  >
+                    {status === "loading" ? "Sending…" : <><Send size={13} /> Send message</>}
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
-
-        {/* Right — contact form */}
-        <div className="lg:col-span-3">
-          {status === "success" ? (
-            <div
-              className="rounded-xl border p-8 flex flex-col items-center text-center gap-3"
-              style={{ background: "var(--bg3)", borderColor: "var(--ac-border)" }}
-            >
-              <CheckCircle2 size={32} style={{ color: "var(--ac)" }} aria-hidden="true" />
-              <h3 className="text-base font-medium" style={{ color: "var(--t1)" }}>
-                Message sent!
-              </h3>
-              <p className="text-sm" style={{ color: "var(--t2)" }}>
-                {serverMessage}
-              </p>
-              <button
-                onClick={() => setStatus("idle")}
-                className="mt-2 text-xs border rounded-md px-4 py-2 transition-colors"
-                style={{ color: "var(--ac)", borderColor: "var(--ac-border)" }}
-              >
-                Send another message
-              </button>
-            </div>
-          ) : (
-            <form
-              onSubmit={handleSubmit}
-              noValidate
-              className="space-y-4"
-              aria-label="Contact form"
-            >
-              {/* Name */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-xs font-mono mb-1.5"
-                  style={{ color: "var(--t3)", fontFamily: "var(--mono)" }}
-                >
-                  name *
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Your name"
-                  style={inputStyle(!!errors.name)}
-                  autoComplete="name"
-                  aria-describedby={errors.name ? "name-error" : undefined}
-                  aria-invalid={!!errors.name}
-                />
-                {errors.name && (
-                  <p id="name-error" className="text-xs mt-1" style={{ color: "#f87171" }} role="alert">
-                    {errors.name}
-                  </p>
-                )}
-              </div>
-
-              {/* Email */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-xs font-mono mb-1.5"
-                  style={{ color: "var(--t3)", fontFamily: "var(--mono)" }}
-                >
-                  email *
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  style={inputStyle(!!errors.email)}
-                  autoComplete="email"
-                  aria-describedby={errors.email ? "email-error" : undefined}
-                  aria-invalid={!!errors.email}
-                />
-                {errors.email && (
-                  <p id="email-error" className="text-xs mt-1" style={{ color: "#f87171" }} role="alert">
-                    {errors.email}
-                  </p>
-                )}
-              </div>
-
-              {/* Subject */}
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-xs font-mono mb-1.5"
-                  style={{ color: "var(--t3)", fontFamily: "var(--mono)" }}
-                >
-                  subject *
-                </label>
-                <input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  value={form.subject}
-                  onChange={handleChange}
-                  placeholder="What's this about?"
-                  style={inputStyle(!!errors.subject)}
-                  aria-describedby={errors.subject ? "subject-error" : undefined}
-                  aria-invalid={!!errors.subject}
-                />
-                {errors.subject && (
-                  <p id="subject-error" className="text-xs mt-1" style={{ color: "#f87171" }} role="alert">
-                    {errors.subject}
-                  </p>
-                )}
-              </div>
-
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-xs font-mono mb-1.5"
-                  style={{ color: "var(--t3)", fontFamily: "var(--mono)" }}
-                >
-                  message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="What's on your mind?"
-                  rows={5}
-                  style={{ ...inputStyle(!!errors.message), resize: "vertical" }}
-                  aria-describedby={errors.message ? "message-error" : undefined}
-                  aria-invalid={!!errors.message}
-                />
-                {errors.message && (
-                  <p id="message-error" className="text-xs mt-1" style={{ color: "#f87171" }} role="alert">
-                    {errors.message}
-                  </p>
-                )}
-              </div>
-
-              {/* Server error */}
-              {status === "error" && (
-                <div
-                  className="flex items-center gap-2 p-3 rounded-lg border text-xs"
-                  style={{
-                    background: "rgba(239,68,68,0.06)",
-                    borderColor: "rgba(239,68,68,0.2)",
-                    color: "#f87171",
-                  }}
-                  role="alert"
-                >
-                  <AlertCircle size={14} aria-hidden="true" />
-                  {serverMessage}
-                </div>
-              )}
-
-              {/* Submit */}
-              <div className="flex items-center justify-between gap-4 pt-1">
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="inline-flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-lg transition-opacity disabled:opacity-60"
-                  style={{ background: "var(--ac)", color: "var(--bg)" }}
-                >
-                  {status === "loading" ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      Send message
-                      <Send size={13} aria-hidden="true" />
-                    </>
-                  )}
-                </button>
-
-                <p
-                  className="flex items-center gap-1.5 text-xs font-mono"
-                  style={{ color: "var(--t3)", fontFamily: "var(--mono)" }}
-                >
-                  <Lock size={10} style={{ color: "var(--ac)" }} aria-hidden="true" />
-                  Server-validated · rate-limited
-                </p>
-              </div>
-            </form>
-          )}
-        </div>
       </div>
+    </>
+  );
+}
+
+function Field({ label, id, error, children }: { label: string; id: string; error?: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <label
+        htmlFor={id}
+        style={{ display: "block", fontSize: "0.75rem", letterSpacing: "0.06em", textTransform: "uppercase", color: "#4d4944", marginBottom: "0.5rem", fontWeight: 500 }}
+      >
+        {label}
+      </label>
+      {children}
+      {error && (
+        <p style={{ fontSize: "0.75rem", color: "#f87171", marginTop: "0.375rem" }} role="alert">
+          {error}
+        </p>
+      )}
     </div>
   );
 }

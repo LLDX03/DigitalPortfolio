@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { projects } from "@/data";
+import { PageNav } from "@/components/layout/PageNav";
 
 const sideProjects = projects.filter((p) => p.sideProject);
 
@@ -14,7 +15,8 @@ export default function ProjectsPage() {
         fontFamily: "var(--font-sans, system-ui, sans-serif)",
       }}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+      <PageNav />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
         {/* Page heading */}
         <div style={{ marginBottom: "5rem" }}>
           <p
