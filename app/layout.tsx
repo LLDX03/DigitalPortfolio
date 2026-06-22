@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader, Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/data";
 
 const newsreader = Newsreader({
@@ -24,9 +22,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "Leo Leong","Software Engineer","Cybersecurity","Digital Forensics",
-    "Node.js","Express","PostgreSQL","Temasek Polytechnic","Singapore",
-    "Full Stack Developer","OWASP","Penetration Testing",
+    "Leo Leong", "Software Engineer", "Cybersecurity", "Digital Forensics",
+    "Node.js", "Express", "PostgreSQL", "Temasek Polytechnic", "Singapore",
+    "Full Stack Developer", "OWASP", "Penetration Testing",
   ],
   authors: [{ name: siteConfig.fullName }],
   creator: siteConfig.fullName,
@@ -46,10 +44,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${newsreader.variable} ${inter.variable}`}>
-      <body className="antialiased min-h-screen" style={{ background: "var(--bg)", color: "var(--t1)" }}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+      <body className="antialiased min-h-screen" style={{ background: "#15161A", color: "#f0ece4" }}>
+        {children}
       </body>
     </html>
   );
