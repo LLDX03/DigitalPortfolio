@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { timeline } from "@/data";
@@ -13,8 +12,7 @@ const experiences = [
     company: "Singapore Armed Forces",
     url: null as string | null,
     description:
-      "Commanding a Terrex Infantry Carrier Vehicle during full-time National Service. Building production-grade projects in spare time — a full-stack café platform and an ML-powered HDB resale price predictor.",
-    tech: ["Node.js", "PostgreSQL", "Python", "Machine Learning"],
+      "Commanding a Terrex Infantry Carrier Vehicle during full-time National Service.",
   },
   {
     period: "Apr 2023 – Sep 2023",
@@ -199,21 +197,23 @@ function ExperienceCard({ exp }: { exp: (typeof experiences)[0] }) {
         <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#5c5955", marginBottom: "0.875rem" }}>
           {exp.description}
         </p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.375rem" }}>
-          {exp.tech.map((t) => (
-            <span key={t} style={{
-              fontSize: "0.6875rem",
-              fontWeight: 500,
-              color: "#d98e4f",
-              background: "rgba(217,142,79,0.08)",
-              borderRadius: "4px",
-              padding: "0.2rem 0.55rem",
-              letterSpacing: "0.02em",
-            }}>
-              {t}
-            </span>
-          ))}
-        </div>
+        {exp.tech && exp.tech.length > 0 && (
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.375rem" }}>
+            {exp.tech.map((t) => (
+              <span key={t} style={{
+                fontSize: "0.6875rem",
+                fontWeight: 500,
+                color: "#d98e4f",
+                background: "rgba(217,142,79,0.08)",
+                borderRadius: "4px",
+                padding: "0.2rem 0.55rem",
+                letterSpacing: "0.02em",
+              }}>
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

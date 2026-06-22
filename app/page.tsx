@@ -343,21 +343,23 @@ function ExperienceCard({ exp }: { exp: (typeof experiences)[0] }) {
         <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#5c5955", marginBottom: "0.875rem" }}>
           {exp.description}
         </p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.375rem" }}>
-          {exp.tech.map((t) => (
-            <span key={t} style={{
-              fontSize: "0.6875rem",
-              fontWeight: 500,
-              color: "#d98e4f",
-              background: "rgba(217,142,79,0.08)",
-              borderRadius: "4px",
-              padding: "0.2rem 0.55rem",
-              letterSpacing: "0.02em",
-            }}>
-              {t}
-            </span>
-          ))}
-        </div>
+        {exp.tech && exp.tech.length > 0 && (
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.375rem" }}>
+            {exp.tech.map((t) => (
+              <span key={t} style={{
+                fontSize: "0.6875rem",
+                fontWeight: 500,
+                color: "#d98e4f",
+                background: "rgba(217,142,79,0.08)",
+                borderRadius: "4px",
+                padding: "0.2rem 0.55rem",
+                letterSpacing: "0.02em",
+              }}>
+                {t}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
