@@ -3,8 +3,12 @@
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
 import { siteConfig } from "@/data";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname === "/") return null;
+
   return (
     <footer
       className="border-t mt-24"

@@ -10,6 +10,8 @@ export function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  if (pathname === "/") return null;
+
   return (
     <header style={{
       position: "sticky", top: 0, zIndex: 50,

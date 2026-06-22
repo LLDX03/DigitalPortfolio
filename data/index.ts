@@ -47,6 +47,8 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   featured: boolean;
+  sideProject?: boolean;
+  tagline?: string;
   codeSnippet?: { lang: string; code: string };
 }
 
@@ -96,6 +98,8 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/LLDX03/cafe-menu",
     featured: true,
+    sideProject: true,
+    tagline: "Full-stack café platform built during NS — JWT auth, loyalty tiers, QR redemptions, table reservations, and SendGrid email verification.",
     codeSnippet: {
       lang: "javascript",
       code: `// JWT auth middleware — Leo's Cafe
@@ -113,6 +117,34 @@ const authMiddleware = (req, res, next) => {
   }
 };`,
     },
+  },
+  {
+    id: "hdb-predictor",
+    title: "HDB Resale Price Predictor",
+    category: "Data",
+    badge: "Personal Project",
+    tagline: "Random Forest model trained on Singapore HDB resale data — R²=0.843, MAE S$68,844. Enter flat details and get an instant price estimate with a 5-year projection.",
+    description:
+      "Machine learning web app that predicts Singapore HDB resale prices using a Random Forest model trained on historical transaction data.",
+    overview:
+      "Built a full ML pipeline — data cleaning, feature engineering, model training, and a Streamlit web interface — to make HDB resale price prediction accessible to anyone.",
+    problem:
+      "HDB resale prices vary enormously by town, flat type, floor, and lease remaining. Buyers and sellers have no quick way to estimate fair market value without engaging an agent.",
+    architecture:
+      "Python data pipeline with pandas for cleaning and feature engineering on 150k+ HDB transactions. Random Forest Regressor via scikit-learn. Streamlit for the interactive web interface with real-time predictions and 5-year price projections.",
+    techStack: ["Python", "pandas", "scikit-learn", "Random Forest", "Streamlit"],
+    securityNotes: [],
+    challenges: [
+      "Feature engineering — encoding town, flat type, and storey range meaningfully without leaking target information",
+      "Handling remaining lease as a continuous feature from heterogeneous formats",
+    ],
+    lessons: [
+      "Feature engineering has more impact on ML accuracy than model choice alone",
+      "Streamlit lets you ship a usable ML demo in hours, not days",
+    ],
+    githubUrl: "https://github.com/LLDX03/HDB-Resale-Price-Prediction",
+    featured: true,
+    sideProject: true,
   },
   {
     id: "ecosaver",
