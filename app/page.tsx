@@ -36,8 +36,8 @@ const NAV = [
 
 const sideProjects = projects.filter((p) => p.sideProject);
 
-const experiences = [
-    {
+const work = [
+  {
     id: "ns",
     period: "2025 – Present",
     role: "Vehicle Commander, Terrex ICV",
@@ -56,7 +56,19 @@ const experiences = [
       "Injected controlled malware and viruses into isolated VM environments to validate product detection and remediation behaviour. Developed POC documentation used by Sales Engineers in enterprise client presentations.",
     tech: ["Cybersecurity", "VM Environments", "Technical Documentation"],
   },
+];
 
+const education = [
+  {
+    id: "tp",
+    period: "Apr 2021 – May 2024",
+    role: "Diploma in Cybersecurity & Digital Forensics",
+    company: "Temasek Polytechnic",
+    url: "https://www.tp.edu.sg",
+    description:
+      "Admitted to the Director's List for AY2021/2022. Final Year Project: EcoSaver — a live IoT air quality monitoring platform deployed on Azure.",
+    tech: ["Cybersecurity", "Digital Forensics", "Node.js", "Azure", "IoT"],
+  },
 ];
 
 /* ── Page ── */
@@ -236,8 +248,23 @@ export default function Home() {
             {/* EXPERIENCE */}
             <section data-section="experience" id="experience" className="portfolio-section">
               <p className="section-label">Experience</p>
+
+              {/* Work */}
+              <p style={{ fontSize: "0.6875rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#38352f", fontWeight: 600, marginBottom: "0.75rem" }}>
+                Work
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "2rem" }}>
+                {work.map((exp) => (
+                  <ExperienceCard key={exp.id} exp={exp} />
+                ))}
+              </div>
+
+              {/* Education */}
+              <p style={{ fontSize: "0.6875rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#38352f", fontWeight: 600, marginBottom: "0.75rem" }}>
+                Education
+              </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                {experiences.map((exp) => (
+                {education.map((exp) => (
                   <ExperienceCard key={exp.id} exp={exp} />
                 ))}
               </div>
@@ -299,7 +326,7 @@ export default function Home() {
 }
 
 /* ── Sub-components ── */
-function ExperienceCard({ exp }: { exp: (typeof experiences)[0] }) {
+function ExperienceCard({ exp }: { exp: (typeof work)[0] }) {
   const [hovered, setHovered] = useState(false);
   return (
     <div
