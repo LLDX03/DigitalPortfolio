@@ -69,6 +69,15 @@ const education = [
       "Admitted to the Director's List for AY2021/2022. Final Year Project: EcoSaver — a live IoT air quality monitoring platform deployed on Azure.",
     tech: ["Cybersecurity", "Digital Forensics", "Node.js", "Azure", "IoT"],
   },
+  {
+    id: "olevel",
+    period: "2016 – 2020",
+    role: "Cambridge GCE O-Level",
+    company: "Pasir Ris Secondary School",
+    url: null as string | null,
+    description:
+      "Edusave Scholarship (2018, 2020). Edusave Certificate of Academic Achievement (2019). Li Kaiyan Progress Award (2020).",
+  },
 ];
 
 /* ── Page ── */

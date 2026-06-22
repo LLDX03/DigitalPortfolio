@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { timeline } from "@/data";
 import { PageNav } from "@/components/layout/PageNav";
 
-const experiences = [
+const work = [
   {
     period: "2025 – Present",
     role: "Vehicle Commander, Terrex ICV",
@@ -22,6 +21,42 @@ const experiences = [
     description:
       "Injected controlled malware and viruses into isolated VM environments to validate product detection and remediation behaviour. Developed POC documentation used by Sales Engineers in enterprise client presentations.",
     tech: ["Cybersecurity", "VM Environments", "Technical Documentation"],
+  },
+  {
+    period: "2019 – 2024",
+    role: "Part-Time Roles",
+    company: "Retail · Banquet · F&B · Warehouse",
+    url: null as string | null,
+    description:
+      "Managed customer escalations in high-volume retail and F&B environments, coordinated banquet setups for large-scale events, and handled time-critical logistics in warehouse operations — building composure and reliability under pressure.",
+  },
+];
+
+const education = [
+  {
+    period: "Apr 2021 – May 2024",
+    role: "Diploma in Cybersecurity & Digital Forensics",
+    company: "Temasek Polytechnic",
+    url: "https://www.tp.edu.sg",
+    description:
+      "Admitted to the Director's List for AY2021/2022. Final Year Project: EcoSaver — a live IoT air quality monitoring platform deployed on Azure.",
+    tech: ["Cybersecurity", "Digital Forensics", "Node.js", "Azure", "IoT"],
+  },
+  {
+    period: "2016 – 2020",
+    role: "Cambridge GCE O-Level",
+    company: "Pasir Ris Secondary School",
+    url: null as string | null,
+    description:
+      "Edusave Scholarship (2018, 2020). Edusave Certificate of Academic Achievement (2019). Li Kaiyan Progress Award (2020).",
+  },
+  {
+    period: "Upcoming",
+    role: "Bachelor of Computer Science",
+    company: "",
+    url: null as string | null,
+    description:
+      "Planning to pursue a CS degree to deepen software engineering foundations and complement cybersecurity expertise.",
   },
 ];
 
@@ -51,7 +86,6 @@ export default function AboutPage() {
         <PageNav />
         <div style={{ maxWidth: "720px", margin: "0 auto", padding: "4rem 1.5rem 6rem" }}>
 
-          {/* Heading */}
           <h1
             style={{
               fontFamily: "var(--font-serif, Georgia, serif)",
@@ -70,58 +104,32 @@ export default function AboutPage() {
             Where I&apos;ve worked and what I&apos;ve studied — the full picture.
           </p>
 
-          {/* Work experience */}
-          <section style={{ marginBottom: "5rem" }}>
-            <p style={{ fontSize: "0.6875rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#d98e4f", marginBottom: "1.75rem", fontWeight: 600 }}>
+          {/* Work */}
+          <section style={{ marginBottom: "3.5rem" }}>
+            <p style={{ fontSize: "0.6875rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#d98e4f", marginBottom: "1.25rem", fontWeight: 600 }}>
               Work
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              {experiences.map((exp) => (
+              {work.map((exp) => (
                 <ExperienceCard key={exp.role} exp={exp} />
               ))}
             </div>
           </section>
 
-          {/* Full timeline */}
-          <section>
-            <p style={{ fontSize: "0.6875rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#d98e4f", marginBottom: "1.75rem", fontWeight: 600 }}>
-              Timeline
+          {/* Education */}
+          <section style={{ marginBottom: "4rem" }}>
+            <p style={{ fontSize: "0.6875rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#d98e4f", marginBottom: "1.25rem", fontWeight: 600 }}>
+              Education
             </p>
-            <ol style={{ listStyle: "none", padding: 0, margin: 0 }}>
-              {timeline.map((item, idx) => (
-                <li key={idx} style={{ display: "flex", gap: "1.5rem", marginBottom: idx < timeline.length - 1 ? "0" : "0" }}>
-                  {/* Line + dot */}
-                  <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
-                    <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#d98e4f", marginTop: "0.35rem", flexShrink: 0 }} />
-                    {idx < timeline.length - 1 && (
-                      <div style={{ width: 1, flex: 1, background: "rgba(255,255,255,0.05)", marginTop: "0.4rem", marginBottom: "0.4rem", minHeight: "2rem" }} />
-                    )}
-                  </div>
-
-                  {/* Content */}
-                  <div style={{ paddingBottom: idx < timeline.length - 1 ? "2rem" : 0 }}>
-                    <p style={{ fontSize: "0.6875rem", color: "#4d4944", letterSpacing: "0.03em", marginBottom: "0.3rem" }}>
-                      {item.year}
-                    </p>
-                    <p style={{ fontSize: "0.9375rem", fontWeight: 500, color: "#e8e3db", marginBottom: item.org ? "0.2rem" : "0.5rem" }}>
-                      {item.title}
-                    </p>
-                    {item.org && (
-                      <p style={{ fontSize: "0.8125rem", color: "#d98e4f", marginBottom: "0.5rem" }}>
-                        {item.org}
-                      </p>
-                    )}
-                    <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#5c5955" }}>
-                      {item.description}
-                    </p>
-                  </div>
-                </li>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              {education.map((exp) => (
+                <ExperienceCard key={exp.role} exp={exp} />
               ))}
-            </ol>
+            </div>
           </section>
 
           {/* Resume */}
-          <div style={{ marginTop: "4rem", paddingTop: "3rem", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+          <div style={{ paddingTop: "3rem", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
             <a
               href="/Leo_Leong.pdf"
               target="_blank"
@@ -150,7 +158,7 @@ export default function AboutPage() {
   );
 }
 
-function ExperienceCard({ exp }: { exp: (typeof experiences)[0] }) {
+function ExperienceCard({ exp }: { exp: (typeof work)[0] }) {
   const [hovered, setHovered] = useState(false);
   return (
     <div
@@ -190,9 +198,9 @@ function ExperienceCard({ exp }: { exp: (typeof experiences)[0] }) {
             >
               · {exp.company} <ArrowUpRight size={12} />
             </a>
-          ) : (
+          ) : exp.company ? (
             <span style={{ fontSize: "0.9375rem", color: "#4d4944" }}>· {exp.company}</span>
-          )}
+          ) : null}
         </div>
         <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#5c5955", marginBottom: exp.tech?.length ? "0.875rem" : 0 }}>
           {exp.description}
