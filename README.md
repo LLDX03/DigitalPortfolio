@@ -1,6 +1,6 @@
 # Leo Leong — Portfolio
 
-Personal portfolio for Leo Leong Ding Xuan — Cybersecurity & Digital Forensics graduate, former Trend Micro intern, software engineer at heart. Built with Next.js 15 and TypeScript, deployed on Vercel.
+Personal portfolio for Leo Leong Ding Xuan — Cybersecurity & Digital Forensics diploma graduate. Deployed on Vercel.
 
 ## Project Structure
 
