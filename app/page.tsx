@@ -44,17 +44,17 @@ const experiences = [
     company: "Trend Micro",
     url: "https://www.trendmicro.com",
     description:
-      "Developed POC security documentation and validated detection & remediation behaviour across VM environments. Supported Sales Engineers and Technical Account Managers with client-facing cybersecurity solutions.",
+      "Injected controlled malware and viruses into isolated VM environments to validate product detection and remediation behaviour. Developed POC documentation used by Sales Engineers in enterprise client presentations.",
     tech: ["Cybersecurity", "VM Environments", "Technical Documentation"],
   },
   {
     id: "ns",
     period: "2025 – Present",
-    role: "Full-time National Service",
+    role: "Vehicle Commander, Terrex ICV",
     company: "Singapore Armed Forces",
     url: null as string | null,
     description:
-      "Serving NS while building production-grade side projects in spare time — a full-stack café platform and an ML-powered HDB resale price predictor.",
+      "Commanding a Terrex Infantry Carrier Vehicle during full-time National Service. Building production-grade projects in spare time — a full-stack café platform and an ML-powered HDB resale price predictor.",
     tech: ["Node.js", "PostgreSQL", "Python", "Machine Learning"],
   },
 ];

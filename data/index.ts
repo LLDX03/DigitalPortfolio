@@ -448,31 +448,31 @@ export const achievements = [
 export const timeline = [
   {
     year: "2025 – Present",
-    title: "National Service · Building in spare time",
-    org: "",
+    title: "Vehicle Commander, Terrex ICV",
+    org: "Singapore Armed Forces",
     description:
-      "Serving NS while developing Leo's Cafe — a full-stack project to stay production-sharp. Available for full-time roles from 2nd August 2026.",
+      "Commanding a Terrex Infantry Carrier Vehicle during full-time National Service. Building production-grade projects in spare time — a full-stack café platform and an ML-powered HDB resale price predictor. Available for full-time roles from August 2026.",
   },
   {
     year: "Apr 2023 – Sep 2023",
     title: "Technical Intern",
     org: "Trend Micro",
     description:
-      "Developed POC security documentation, validated detection & remediation behaviour in VM environments, supported Sales Engineers and Technical Account Managers with client cybersecurity solutions.",
+      "Injected controlled malware and viruses into isolated VM environments to validate product detection and remediation behaviour. Developed POC documentation used by Sales Engineers in enterprise client presentations.",
   },
   {
     year: "Apr 2021 – May 2024",
     title: "Diploma in Cybersecurity & Digital Forensics",
     org: "Temasek Polytechnic",
     description:
-      "Director's List AY2021/22. Distinctions in Network Technology, Coding & Development. Final Year Project: EcoSaver IoT Air Quality Platform on Azure.",
+      "Admitted to the Director's List for AY2021/2022. Final Year Project: EcoSaver — a live IoT air quality monitoring platform deployed on Azure.",
   },
   {
     year: "2019 – 2024",
     title: "Part-Time Roles",
     org: "Retail · Banquet · F&B · Warehouse",
     description:
-      "Developed strong communication and problem-solving skills across diverse customer-facing and operational environments.",
+      "Managed customer escalations in high-volume retail and F&B environments, coordinated banquet setups for large-scale events, and handled time-critical logistics in warehouse operations — building composure and reliability under pressure.",
   },
   {
     year: "2016 – 2020",
