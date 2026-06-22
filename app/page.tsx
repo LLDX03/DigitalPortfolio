@@ -291,11 +291,6 @@ export default function Home() {
               </Link>
             </section>
 
-            <footer style={{ paddingBottom: "3rem" }}>
-              <p style={{ fontSize: "0.75rem", color: "#28261f" }}>
-                Designed &amp; built by Leo Leong · {new Date().getFullYear()}
-              </p>
-            </footer>
           </main>
         </div>
       </div>
