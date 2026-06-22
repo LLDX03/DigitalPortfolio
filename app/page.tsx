@@ -340,7 +340,7 @@ function ExperienceCard({ exp }: { exp: (typeof experiences)[0] }) {
             <span style={{ fontSize: "0.9375rem", color: "#4d4944" }}>· {exp.company}</span>
           )}
         </div>
-        <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#5c5955", marginBottom: "0.875rem" }}>
+        <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#5c5955", marginBottom: exp.tech?.length ? "0.875rem" : 0 }}>
           {exp.description}
         </p>
         {exp.tech && exp.tech.length > 0 && (
