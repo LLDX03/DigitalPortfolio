@@ -193,13 +193,13 @@ export default function Home() {
               {[
                 { href: siteConfig.github, icon: <IconGitHub />, label: "GitHub" },
                 { href: siteConfig.linkedin, icon: <IconLinkedIn />, label: "LinkedIn" },
-                { href: `mailto:${siteConfig.email}`, icon: <Mail size={17} />, label: "Email" },
+                { href: "/contact", icon: <Mail size={17} />, label: "Contact" },
               ].map(({ href, icon, label }) => (
                 <a
                   key={label}
                   href={href}
-                  target={href.startsWith("mailto") ? undefined : "_blank"}
-                  rel="noopener noreferrer"
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                   aria-label={label}
                   style={{ color: "#38352f", transition: "color 0.15s" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "#d98e4f")}
