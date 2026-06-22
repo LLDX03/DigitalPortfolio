@@ -54,7 +54,7 @@ export function Specialties() {
         <SectionHeader title="Technical specialties" sub="core focus areas" />
 
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-          {specialties.map(({ icon: Icon, name, detail }) => (
+          {specialties.map(({ icon: Icon, name }) => (
             <div
               key={name}
               className="rounded-xl border p-4 transition-colors duration-200"
@@ -71,9 +71,6 @@ export function Specialties() {
               />
               <p className="text-sm font-medium mb-1" style={{ color: "var(--t1)" }}>
                 {name}
-              </p>
-              <p className="text-xs leading-relaxed" style={{ color: "var(--t3)" }}>
-                {detail}
               </p>
             </div>
           ))}
