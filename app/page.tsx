@@ -37,6 +37,15 @@ const NAV = [
 const sideProjects = projects.filter((p) => p.sideProject);
 
 const experiences = [
+    {
+    id: "ns",
+    period: "2025 – Present",
+    role: "Vehicle Commander, Terrex ICV",
+    company: "Singapore Armed Forces",
+    url: null as string | null,
+    description:
+      "Commanding a Terrex Infantry Carrier Vehicle during full-time National Service.",
+  },
   {
     id: "trend-micro",
     period: "Apr 2023 – Sep 2023",
@@ -47,16 +56,7 @@ const experiences = [
       "Injected controlled malware and viruses into isolated VM environments to validate product detection and remediation behaviour. Developed POC documentation used by Sales Engineers in enterprise client presentations.",
     tech: ["Cybersecurity", "VM Environments", "Technical Documentation"],
   },
-  {
-    id: "ns",
-    period: "2025 – Present",
-    role: "Vehicle Commander, Terrex ICV",
-    company: "Singapore Armed Forces",
-    url: null as string | null,
-    description:
-      "Commanding a Terrex Infantry Carrier Vehicle during full-time National Service. Building production-grade projects in spare time — a full-stack café platform and an ML-powered HDB resale price predictor.",
-    tech: ["Node.js", "PostgreSQL", "Python", "Machine Learning"],
-  },
+
 ];
 
 /* ── Page ── */
