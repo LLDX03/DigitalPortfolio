@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, ArrowUpRight, Download } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
 import { siteConfig, projects } from "@/data";
 
 /* ── Inline SVG icons (lucide-react doesn't ship Github/Linkedin) ── */
@@ -212,7 +212,8 @@ export default function Home() {
               </div>
               <a
                 href="/Leo_Leong.pdf"
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -227,8 +228,8 @@ export default function Home() {
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#d98e4f")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#f0ece4")}
               >
-                <Download size={13} />
-                Download Résumé
+                <ArrowUpRight size={13} />
+                View Résumé
               </a>
             </section>
 
@@ -269,6 +270,25 @@ export default function Home() {
                   <ProjectCard key={project.id} project={project} index={i} />
                 ))}
               </div>
+              <Link
+                href="/projects"
+                style={{
+                  marginTop: "2.5rem",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.375rem",
+                  fontSize: "0.8125rem",
+                  fontWeight: 500,
+                  color: "#f0ece4",
+                  textDecoration: "none",
+                  letterSpacing: "0.02em",
+                  transition: "color 0.15s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#d98e4f")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#f0ece4")}
+              >
+                View all projects <ArrowUpRight size={13} />
+              </Link>
             </section>
 
             <footer style={{ paddingBottom: "3rem" }}>

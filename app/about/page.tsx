@@ -1,172 +1,237 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
-import { Download, MapPin, Building2 } from "lucide-react";
-import { siteConfig, timeline } from "@/data";
-import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Tag } from "@/components/ui/Tag";
+import { useState, useEffect } from "react";
+import { ArrowUpRight } from "lucide-react";
+import { timeline } from "@/data";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Learn about Leo Leong — Cybersecurity & Digital Forensics graduate from Temasek Polytechnic, former Trend Micro intern, aspiring software engineer.",
-};
-
-const interests = [
-  "Secure Software Development",
-  "Backend Systems",
-  "Digital Forensics",
-  "Cloud Security",
-  "Penetration Testing",
-  "System Design",
-  "Computer Science",
+const experiences = [
+  {
+    period: "2025 – Present",
+    role: "Full-time National Service",
+    company: "Singapore Armed Forces",
+    url: null as string | null,
+    description:
+      "Serving NS while building production-grade side projects in spare time — a full-stack café platform and an ML-powered HDB resale price predictor.",
+    tech: ["Node.js", "PostgreSQL", "Python", "Machine Learning"],
+  },
+  {
+    period: "Apr 2023 – Sep 2023",
+    role: "Technical Intern",
+    company: "Trend Micro",
+    url: "https://www.trendmicro.com",
+    description:
+      "Developed POC security documentation and validated detection & remediation behaviour across VM environments. Supported Sales Engineers and Technical Account Managers with client-facing cybersecurity solutions.",
+    tech: ["Cybersecurity", "VM Environments", "Technical Documentation"],
+  },
 ];
 
 export default function AboutPage() {
+  const [mouse, setMouse] = useState({ x: -1000, y: -1000 });
+
+  useEffect(() => {
+    const move = (e: MouseEvent) => setMouse({ x: e.clientX, y: e.clientY });
+    window.addEventListener("mousemove", move);
+    return () => window.removeEventListener("mousemove", move);
+  }, []);
+
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-      <SectionHeader title="About me" sub="background & journey" />
+    <>
+      <div
+        aria-hidden="true"
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: "none",
+          background: `radial-gradient(700px at ${mouse.x}px ${mouse.y}px, rgba(217,142,79,0.07) 0%, transparent 75%)`,
+        }}
+      />
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-        {/* Left — profile card */}
-        <div className="lg:col-span-2">
-          {/* Avatar */}
-          <div
-            className="w-16 h-16 rounded-xl flex items-center justify-center text-xl font-mono font-medium mb-4 border"
+      <div style={{ background: "#15161A", minHeight: "100vh", fontFamily: "var(--font-sans, system-ui, sans-serif)", position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: "720px", margin: "0 auto", padding: "5rem 1.5rem 6rem" }}>
+
+          {/* Back */}
+          <Link
+            href="/"
             style={{
-              background: "var(--ac-glow)",
-              borderColor: "var(--ac-border)",
-              color: "var(--ac)",
-              fontFamily: "var(--mono)",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.375rem",
+              fontSize: "0.75rem",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: "#4d4944",
+              textDecoration: "none",
+              marginBottom: "3.5rem",
+              transition: "color 0.15s",
             }}
-            aria-hidden="true"
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#d98e4f")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#4d4944")}
           >
-            LL
-          </div>
+            ← Back
+          </Link>
 
-          <h2 className="text-lg font-medium mb-0.5" style={{ color: "var(--t1)" }}>
-            {siteConfig.fullName}
-          </h2>
-          <p className="text-xs font-mono mb-4" style={{ color: "var(--ac)", fontFamily: "var(--mono)" }}>
-            Software Engineer // Cybersecurity Specialist
-          </p>
-
-          <div className="flex items-center gap-2 mb-4 text-xs" style={{ color: "var(--t3)" }}>
-            <MapPin size={12} aria-hidden="true" />
-            Singapore
-          </div>
-
-          {/* Trend Micro badge */}
-          <div
-            className="inline-flex items-center gap-2 rounded-md border px-3 py-1.5 text-xs mb-5"
+          {/* Heading */}
+          <h1
             style={{
-              background: "rgba(239,68,68,0.07)",
-              borderColor: "rgba(239,68,68,0.2)",
-              color: "#fca5a5",
+              fontFamily: "var(--font-serif, Georgia, serif)",
+              fontStyle: "italic",
+              fontWeight: 400,
+              fontSize: "clamp(2.25rem, 6vw, 3.5rem)",
+              lineHeight: 1.1,
+              color: "#f0ece4",
+              letterSpacing: "-0.02em",
+              marginBottom: "1rem",
             }}
           >
-            <Building2 size={12} aria-hidden="true" />
-            Former Technical Intern · Trend Micro
-          </div>
-
-          <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--t2)" }}>
-            Diploma graduate in Cybersecurity &amp; Digital Forensics from
-            Temasek Polytechnic, with real-world experience at Trend Micro and a
-            strong drive to build practical, secure software.
-          </p>
-          <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--t2)" }}>
-            Currently serving NS, I build production-grade projects in my own
-            time to stay sharp. My goal: pursue a Computer Science degree and
-            grow into a software engineer who thinks like a security specialist.
+            Experience
+          </h1>
+          <p style={{ fontSize: "0.9375rem", lineHeight: 1.75, color: "#5c5955", marginBottom: "4rem", maxWidth: "48ch" }}>
+            Where I&apos;ve worked and what I&apos;ve studied — the full picture.
           </p>
 
-          {/* Interests */}
-          <div
-            className="rounded-xl border p-4 mb-5"
-            style={{ background: "var(--bg3)", borderColor: "var(--b1)" }}
-          >
-            <p
-              className="text-xs font-mono mb-3"
-              style={{ color: "var(--t3)", fontFamily: "var(--mono)" }}
-            >
-              // <span style={{ color: "var(--ac)" }}>interests</span>
+          {/* Work experience */}
+          <section style={{ marginBottom: "5rem" }}>
+            <p style={{ fontSize: "0.6875rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#d98e4f", marginBottom: "1.75rem", fontWeight: 600 }}>
+              Work
             </p>
-            <div className="flex flex-wrap gap-2">
-              {interests.map((i) => (
-                <Tag key={i}>{i}</Tag>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              {experiences.map((exp) => (
+                <ExperienceCard key={exp.role} exp={exp} />
               ))}
             </div>
-          </div>
+          </section>
 
-          {/* Resume download */}
-          <a
-            href="/Leo_Leong.pdf"
-            download
-            className="inline-flex items-center gap-2 text-sm border rounded-lg px-4 py-2.5 transition-colors"
-            style={{
-              color: "var(--ac)",
-              borderColor: "var(--ac-border)",
-              background: "var(--ac-glow)",
-            }}
-          >
-            <Download size={14} aria-hidden="true" />
-            Download Résumé
-          </a>
-        </div>
+          {/* Full timeline */}
+          <section>
+            <p style={{ fontSize: "0.6875rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "#d98e4f", marginBottom: "1.75rem", fontWeight: 600 }}>
+              Timeline
+            </p>
+            <ol style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              {timeline.map((item, idx) => (
+                <li key={idx} style={{ display: "flex", gap: "1.5rem", marginBottom: idx < timeline.length - 1 ? "0" : "0" }}>
+                  {/* Line + dot */}
+                  <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
+                    <div style={{ width: 7, height: 7, borderRadius: "50%", background: "#d98e4f", marginTop: "0.35rem", flexShrink: 0 }} />
+                    {idx < timeline.length - 1 && (
+                      <div style={{ width: 1, flex: 1, background: "rgba(255,255,255,0.05)", marginTop: "0.4rem", marginBottom: "0.4rem", minHeight: "2rem" }} />
+                    )}
+                  </div>
 
-        {/* Right — timeline */}
-        <div className="lg:col-span-3">
-          <p
-            className="text-xs font-mono mb-6"
-            style={{ color: "var(--t3)", fontFamily: "var(--mono)" }}
-          >
-            // <span style={{ color: "var(--ac)" }}>career journey</span>
-          </p>
-
-          <ol className="relative">
-            {timeline.map((item, idx) => (
-              <li key={idx} className="flex gap-4 mb-7 last:mb-0">
-                {/* Timeline dot + line */}
-                <div className="flex flex-col items-center">
-                  <div
-                    className="w-2 h-2 rounded-full shrink-0 mt-1"
-                    style={{ background: "var(--ac)" }}
-                    aria-hidden="true"
-                  />
-                  {idx < timeline.length - 1 && (
-                    <div
-                      className="w-px flex-1 mt-1.5"
-                      style={{ background: "var(--b1)" }}
-                      aria-hidden="true"
-                    />
-                  )}
-                </div>
-
-                {/* Content */}
-                <div className="pb-2">
-                  <p
-                    className="text-xs font-mono mb-1"
-                    style={{ color: "var(--ac)", fontFamily: "var(--mono)" }}
-                  >
-                    {item.year}
-                  </p>
-                  <p className="text-sm font-medium mb-0.5" style={{ color: "var(--t1)" }}>
-                    {item.title}
-                  </p>
-                  {item.org && (
-                    <p
-                      className="text-xs mb-1.5"
-                      style={{ color: "var(--ac)" }}
-                    >
-                      {item.org}
+                  {/* Content */}
+                  <div style={{ paddingBottom: idx < timeline.length - 1 ? "2rem" : 0 }}>
+                    <p style={{ fontSize: "0.6875rem", color: "#4d4944", letterSpacing: "0.03em", marginBottom: "0.3rem" }}>
+                      {item.year}
                     </p>
-                  )}
-                  <p className="text-xs leading-relaxed" style={{ color: "var(--t2)" }}>
-                    {item.description}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
+                    <p style={{ fontSize: "0.9375rem", fontWeight: 500, color: "#e8e3db", marginBottom: item.org ? "0.2rem" : "0.5rem" }}>
+                      {item.title}
+                    </p>
+                    {item.org && (
+                      <p style={{ fontSize: "0.8125rem", color: "#d98e4f", marginBottom: "0.5rem" }}>
+                        {item.org}
+                      </p>
+                    )}
+                    <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#5c5955" }}>
+                      {item.description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          {/* Resume */}
+          <div style={{ marginTop: "4rem", paddingTop: "3rem", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+            <a
+              href="/Leo_Leong.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                fontSize: "0.8125rem",
+                fontWeight: 500,
+                color: "#f0ece4",
+                textDecoration: "none",
+                letterSpacing: "0.02em",
+                transition: "color 0.15s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#d98e4f")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#f0ece4")}
+            >
+              <ArrowUpRight size={13} />
+              View Résumé
+            </a>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function ExperienceCard({ exp }: { exp: (typeof experiences)[0] }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        display: "grid",
+        gridTemplateColumns: "7rem 1fr",
+        gap: "1rem",
+        padding: "1.25rem",
+        borderRadius: "8px",
+        background: hovered ? "rgba(217,142,79,0.04)" : "transparent",
+        border: hovered ? "1px solid rgba(217,142,79,0.08)" : "1px solid transparent",
+        transition: "background 0.2s, border-color 0.2s",
+      }}
+    >
+      <p style={{ fontSize: "0.6875rem", color: "#4d4944", letterSpacing: "0.03em", lineHeight: 1.5, paddingTop: "0.2rem" }}>
+        {exp.period}
+      </p>
+      <div>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", flexWrap: "wrap", marginBottom: "0.35rem" }}>
+          <span style={{ fontSize: "0.9375rem", fontWeight: 500, color: "#e8e3db" }}>{exp.role}</span>
+          {exp.url ? (
+            <a
+              href={exp.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.2rem",
+                fontSize: "0.9375rem",
+                color: hovered ? "#d98e4f" : "#6b6660",
+                textDecoration: "none",
+                transition: "color 0.15s",
+              }}
+            >
+              · {exp.company} <ArrowUpRight size={12} />
+            </a>
+          ) : (
+            <span style={{ fontSize: "0.9375rem", color: "#4d4944" }}>· {exp.company}</span>
+          )}
+        </div>
+        <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#5c5955", marginBottom: "0.875rem" }}>
+          {exp.description}
+        </p>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.375rem" }}>
+          {exp.tech.map((t) => (
+            <span key={t} style={{
+              fontSize: "0.6875rem",
+              fontWeight: 500,
+              color: "#d98e4f",
+              background: "rgba(217,142,79,0.08)",
+              borderRadius: "4px",
+              padding: "0.2rem 0.55rem",
+              letterSpacing: "0.02em",
+            }}>
+              {t}
+            </span>
+          ))}
         </div>
       </div>
     </div>
