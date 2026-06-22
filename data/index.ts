@@ -451,14 +451,14 @@ export const timeline = [
     title: "Vehicle Commander, Terrex ICV",
     org: "Singapore Armed Forces",
     description:
-      "Commanding a Terrex Infantry Carrier Vehicle during full-time National Service. Building production-grade projects in spare time — a full-stack café platform and an ML-powered HDB resale price predictor. Available for full-time roles from August 2026.",
+      "Serving as Vehicle Commander on the SAF Terrex ICV, responsible for leading the vehicle crew and dismounted infantry squad during operations. Manages real-time battlefield situational awareness via the Battlefield Management System (BMS), coordinates mission execution, and ensures crew and vehicle readiness.",
   },
   {
     year: "Apr 2023 – Sep 2023",
     title: "Technical Intern",
     org: "Trend Micro",
     description:
-      "Injected controlled malware and viruses into isolated VM environments to validate product detection and remediation behaviour. Developed POC documentation used by Sales Engineers in enterprise client presentations.",
+      "Conducted controlled malware and virus injection across isolated VM environments to stress-test Trend Micro's threat detection and remediation capabilities across multiple attack scenarios. Translated findings into POC documentation adopted by Sales Engineers for enterprise client presentations, bridging the gap between technical validation and commercial delivery.",
   },
   {
     year: "Apr 2021 – May 2024",
@@ -472,7 +472,7 @@ export const timeline = [
     title: "Part-Time Roles",
     org: "Retail · Banquet · F&B · Warehouse",
     description:
-      "Managed customer escalations in high-volume retail and F&B environments, coordinated banquet setups for large-scale events, and handled time-critical logistics in warehouse operations — building composure and reliability under pressure.",
+      "Worked across retail, banquet, F&B, and warehouse environments simultaneously with studies. Handled customer escalations, managed high-volume service under time pressure, and coordinated logistics in fast-paced operations. Developing the reliability and composure that formal education doesn't teach.",
   },
   {
     year: "2016 – 2020",

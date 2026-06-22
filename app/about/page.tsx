@@ -11,7 +11,7 @@ const work = [
     company: "Singapore Armed Forces",
     url: null as string | null,
     description:
-      "Commanding a Terrex Infantry Carrier Vehicle during full-time National Service.",
+      "Serving as Vehicle Commander on the SAF Terrex ICV, responsible for leading the vehicle crew and dismounted infantry squad during operations. Manages real-time battlefield situational awareness via the Battlefield Management System (BMS), coordinates mission execution, and ensures crew and vehicle readiness.",
   },
   {
     period: "Apr 2023 – Sep 2023",
@@ -19,7 +19,7 @@ const work = [
     company: "Trend Micro",
     url: "https://www.trendmicro.com",
     description:
-      "Injected controlled malware and viruses into isolated VM environments to validate product detection and remediation behaviour. Developed POC documentation used by Sales Engineers in enterprise client presentations.",
+      "Conducted controlled malware and virus injection across isolated VM environments to stress-test Trend Micro's threat detection and remediation capabilities across multiple attack scenarios. Translated findings into POC documentation adopted by Sales Engineers for enterprise client presentations, bridging the gap between technical validation and commercial delivery.",
     tech: ["Cybersecurity", "VM Environments", "Technical Documentation"],
   },
   {
@@ -28,7 +28,7 @@ const work = [
     company: "Retail · Banquet · F&B · Warehouse",
     url: null as string | null,
     description:
-      "Managed customer escalations in high-volume retail and F&B environments, coordinated banquet setups for large-scale events, and handled time-critical logistics in warehouse operations — building composure and reliability under pressure.",
+      "Worked across retail, banquet, F&B, and warehouse environments simultaneously with studies. Handled customer escalations, managed high-volume service under time pressure, and coordinated logistics in fast-paced operations. Developing the reliability and composure that formal education doesn't teach.",
   },
 ];
 
