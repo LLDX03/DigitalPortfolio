@@ -15,6 +15,7 @@
   --tag-bg: rgba(34, 211, 238, 0.09);
   --tag-c: #67e8f9;
   --mono: "Courier New", monospace;
+  
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
