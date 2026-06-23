@@ -158,7 +158,6 @@ export default function ContactPage() {
               {[
                 { icon: <IconLinkedIn />, label: "LinkedIn", value: "leoleongdingxuan", href: siteConfig.linkedin },
                 { icon: <IconGitHub />, label: "GitHub", value: "LLDX03", href: siteConfig.github },
-                { icon: null, label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
               ].map(({ icon, label, value, href }) => (
                 <a
                   key={label}
