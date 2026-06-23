@@ -219,16 +219,16 @@ export default function Home() {
               <p className="section-label">About</p>
               <div style={{ display: "flex", flexDirection: "column", gap: "1.125rem", marginBottom: "2rem" }}>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
-                  I am a Cybersecurity &amp; Digital Forensics graduate from <Hl>Temasek Polytechnic </Hl> and was admitted to the Director&apos;s List for AY2021/2022 in recognition of my academic performance.
+                  I am a Cybersecurity &amp; Digital Forensics graduate from <Hl>Temasek Polytechnic</Hl>, admitted to the Director&apos;s List for AY2021/2022.
                 </p>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
-                  During my internship at <Hl>Trend Micro</Hl>, I worked as a Technical Intern where I developed Proof-of-Concept (POC) documentation used by Sales Engineers in client presentations. I also identified an opportunity to improve team efficiency and independently built a Python script that automated client email outreach, reducing manual effort for the Sales Engineering team.
+                  Studying cybersecurity gave me a strong technical foundation, but somewhere along the way, building things took over.
                 </p>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
-                  I am currently serving National Service and will ORD on 1 August 2026. In my spare time, I build software projects to strengthen my development skills. NS has also shaped me beyond technical work, teaching me how to lead, operate independently, and perform under pressure. I pick up new skills quickly and adapt well in fast-moving environments.
+                  I am currently serving National Service and will ORD on 1 August 2026. As a Vehicle Commander, every system in the vehicle is mine to own. From physical things like radio set to systems like RCWS and BMS. I learn fast because I have no choice. NS has shaped me to operate independently, perform under pressure, and take full ownership of whatever is in front of me. In my spare time, I build software projects to stay sharp and keep growing as a developer.
                 </p>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
-                  With a strong foundation in cybersecurity and a growing passion for software engineering, I enjoy learning new technologies, solving real-world problems, and building secure, scalable applications. I also stay up to date with developments in AI and leverage AI tools effectively to enhance my learning, productivity, and software development workflow.
+                  With a strong foundation in cybersecurity and a growing passion for software engineering, I stay up to date with developments in AI and leverage AI tools effectively to enhance my learning, productivity, and development workflow.
                 </p>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
                   My goal is to become a software engineer who combines strong development expertise with a cybersecurity mindset.
