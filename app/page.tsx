@@ -66,7 +66,7 @@ const education = [
     company: "Temasek Polytechnic",
     url: "https://www.tp.edu.sg",
     description:
-      "Admitted to the Director's List for AY2021/2022. Final Year Project: EcoSaver — a live IoT air quality monitoring platform deployed on Azure.",
+      "Admitted to the Director's List for AY2021/2022. Achieved Distinctions in Network Technology and Coding & Development Project",
     tech: ["Cybersecurity", "Digital Forensics", "Node.js", "Azure", "IoT"],
   },
   {
@@ -142,7 +142,7 @@ export default function Home() {
                   Software Engineer
                 </p>
                 <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "#7a756e", maxWidth: "26ch" }}>
-                  Building secure, full-stack applications. Cybersecurity background, software engineering at heart.
+                  Side projects outside of work and school. Cybersecurity by Training — Software Engineering by Passion.
                 </p>
               </div>
 

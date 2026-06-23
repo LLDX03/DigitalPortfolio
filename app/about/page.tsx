@@ -39,7 +39,7 @@ const education = [
     company: "Temasek Polytechnic",
     url: "https://www.tp.edu.sg",
     description:
-      "Admitted to the Director's List for AY2021/2022. Final Year Project: EcoSaver — a live IoT air quality monitoring platform deployed on Azure.",
+      "Admitted to the Director's List for AY2021/2022. Achieved Distinctions in Network Technology and Coding & Development Project",
     tech: ["Cybersecurity", "Digital Forensics", "Node.js", "Azure", "IoT"],
   },
   {
