@@ -138,8 +138,9 @@ export default function Home() {
                 }}>
                   Leo Leong
                 </h1>
-                <p style={{ fontSize: "0.9375rem", fontWeight: 500, color: "#d98e4f", marginBottom: "0.875rem" }}>
-                  Software Engineer
+                <p style={{ fontSize: "0.9375rem", fontWeight: 500, marginBottom: "0.875rem" }}>
+                  <span style={{ color: "#7a756e" }}>Aspiring </span>
+                  <span style={{ color: "#d98e4f" }}>Software Engineer</span>
                 </p>
                 <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "#7a756e", maxWidth: "26ch" }}>
                   Side projects outside of work and school. 
