@@ -44,7 +44,7 @@ const work = [
     company: "Singapore Armed Forces",
     url: null as string | null,
     description:
-      "Serving as Vehicle Commander on the SAF Terrex ICV, responsible for leading the vehicle crew and dismounted infantry squad during operations. Manages real-time battlefield situational awareness via the Battlefield Management System (BMS), coordinates mission execution, and ensures crew and vehicle readiness.",
+      "Commands a Terrex ICV independently, using the Battlefield Management System's live camera and map to direct the operator through each mission. When recon falls short and unexpected obstacles emerge on the ground, the decision falls on you alone in real time.",
   },
   {
     id: "trend-micro",
