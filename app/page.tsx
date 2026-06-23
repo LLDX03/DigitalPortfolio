@@ -225,7 +225,7 @@ export default function Home() {
                   Studying cybersecurity gave me a strong technical foundation, but somewhere along the way, building things took over.
                 </p>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
-                  I am currently serving National Service and will ORD on <Hl>1 August 2026</Hl>. As a Vehicle Commander, every system in the vehicle is mine to own. From physical things like radio set to systems like <Hl>RCWS</Hl> and <Hl>BMS</Hl>. I learn fast because I have no choice. NS has shaped me to operate independently, perform under pressure, and take full ownership of whatever is in front of me. In my spare time, I build software projects to stay sharp and keep growing as a developer.
+                  I am currently serving National Service and will ORD on <Hl>1 August 2026</Hl>. As a Vehicle Commander, every system in the vehicle is mine to own. From physical things like radio set to systems like <Hl>RCWS</Hl> and <Hl>BMS</Hl>. I learn fast because that is what the role demands. NS has shaped me to operate independently, perform under pressure, and take full ownership of whatever is in front of me. In my spare time, I build software projects to stay sharp and keep growing as a developer.
                 </p>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
                   With a strong foundation in cybersecurity and a growing passion for software engineering, I stay up to date with developments in <Hl>AI</Hl> and leverage AI tools effectively to enhance my learning, productivity, and development workflow.
