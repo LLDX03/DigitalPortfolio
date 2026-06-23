@@ -298,7 +298,7 @@ export default function Home() {
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#d98e4f")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#f0ece4")}
               >
-                View full timeline <ArrowUpRight size={13} />
+                View full details <ArrowUpRight size={13} />
               </Link>
             </section>
 
