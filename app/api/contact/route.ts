@@ -106,36 +106,24 @@ export async function POST(req: NextRequest) {
   }
 
   // ── Send email ────────────────────────────────────────────────────────────
-  // Requires SENDGRID_API_KEY + CONTACT_TO_EMAIL in .env
-  // Uncomment when you add your SendGrid key:
-  //
-  // try {
-  //   const sgMail = (await import("@sendgrid/mail")).default;
-  //   sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
-  //   await sgMail.send({
-  //     to: process.env.CONTACT_TO_EMAIL!,
-  //     from: { email: process.env.SENDGRID_FROM_EMAIL!, name: "Portfolio Contact" },
-  //     replyTo: sanitised.email,
-  //     subject: `[Portfolio] ${sanitised.subject}`,
-  //     text: `Name: ${sanitised.name}\nEmail: ${sanitised.email}\n\n${sanitised.message}`,
-  //     html: `<p><strong>Name:</strong> ${sanitised.name}</p>
-  //            <p><strong>Email:</strong> ${sanitised.email}</p>
-  //            <p><strong>Message:</strong></p>
-  //            <p>${sanitised.message.replace(/\n/g, "<br>")}</p>`,
-  //   });
-  // } catch (err) {
-  //   console.error("SendGrid error:", err);
-  //   return NextResponse.json({ error: "Failed to send message." }, { status: 500 });
-  // }
-
-  // Log to console until SendGrid is configured
-  console.info("[contact]", {
-    timestamp: new Date().toISOString(),
-    ip,
-    name: sanitised.name,
-    email: sanitised.email,
-    subject: sanitised.subject,
-  });
+  try {
+    const sgMail = (await import("@sendgrid/mail")).default;
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
+    await sgMail.send({
+      to: process.env.CONTACT_TO_EMAIL!,
+      from: { email: process.env.SENDGRID_FROM_EMAIL!, name: "Portfolio Contact" },
+      replyTo: sanitised.email,
+      subject: `[Portfolio] ${sanitised.subject}`,
+      text: `Name: ${sanitised.name}\nEmail: ${sanitised.email}\n\n${sanitised.message}`,
+      html: `<p><strong>Name:</strong> ${sanitised.name}</p>
+             <p><strong>Email:</strong> ${sanitised.email}</p>
+             <p><strong>Message:</strong></p>
+             <p>${sanitised.message.replace(/\n/g, "<br>")}</p>`,
+    });
+  } catch (err) {
+    console.error("SendGrid error:", err);
+    return NextResponse.json({ error: "Failed to send message." }, { status: 500 });
+  }
 
   return NextResponse.json(
     { message: "Thanks for reaching out! I'll get back to you soon." },
