@@ -67,7 +67,6 @@ const education = [
     url: "https://www.tp.edu.sg",
     description:
       "Admitted to the Director's List for AY2021/2022. Achieved Distinctions in Network Technology and Coding & Development Project",
-    tech: ["Cybersecurity", "Digital Forensics", "Node.js", "Azure", "IoT"],
   },
   {
     id: "olevel",
