@@ -46,7 +46,7 @@ export function PageNav() {
 
         <div style={{ display: "flex", alignItems: "center", gap: "1.75rem" }}>
           {[
-            { label: "About", href: "/about" },
+            { label: "Experience", href: "/about" },
             { label: "Projects", href: "/projects" },
             { label: "Contact", href: "/contact" },
           ].map(({ label, href }) => (

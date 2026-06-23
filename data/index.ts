@@ -101,7 +101,7 @@ export const projects: Project[] = [
     featured: true,
     sideProject: true,
     imageUrl: "/projects/leos-cafe.png",
-    tagline: "Full-stack café platform built during NS — JWT auth, loyalty tiers, QR redemptions, table reservations, and SendGrid email verification.",
+    tagline: "A production-grade café platform with customer ordering, loyalty tiers, and QR redemptions. Built during NS to stay sharp.",
     codeSnippet: {
       lang: "javascript",
       code: `// JWT auth middleware — Leo's Cafe
@@ -125,7 +125,7 @@ const authMiddleware = (req, res, next) => {
     title: "HDB Resale Price Predictor",
     category: "Data",
     badge: "Personal Project",
-    tagline: "Random Forest model trained on Singapore HDB resale data — R²=0.843, MAE S$68,844. Enter flat details and get an instant price estimate with a 5-year projection.",
+    tagline: "Trained on 233,000 Singapore HDB resale transactions. R²=0.843, MAE S$68,844. Enter flat details and get a future price estimate.",
     description:
       "Machine learning web app that predicts Singapore HDB resale prices using a Random Forest model trained on historical transaction data.",
     overview:

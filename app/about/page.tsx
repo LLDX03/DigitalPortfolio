@@ -11,7 +11,7 @@ const work = [
     company: "Singapore Armed Forces",
     url: null as string | null,
     description:
-      "Commands a Terrex ICV independently, using the Battlefield Management System's live camera and map to direct the operator through each mission. When recon falls short and unexpected obstacles emerge on the ground, the decision falls on you alone in real time.",
+      "Commands a Terrex ICV independently, using the Battlefield Management System's live camera and map to direct the operator through each mission. When recon falls short and unexpected obstacles emerge on the ground, the decision falls on me alone in real time.",
   },
   {
     period: "Apr 2023 – Sep 2023",
@@ -55,7 +55,7 @@ const education = [
     company: "",
     url: null as string | null,
     description:
-      "Planning to pursue a CS degree to deepen software engineering foundations and complement cybersecurity expertise.",
+      "Pursuing a Bachelor of Computer Science from August 2026 to deepen software engineering foundations and complement cybersecurity expertise.",
   },
 ];
 
