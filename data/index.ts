@@ -101,7 +101,7 @@ export const projects: Project[] = [
     featured: true,
     sideProject: true,
     imageUrl: "/projects/leos-cafe.png",
-    tagline: "A production-grade café platform with customer ordering, loyalty tiers, and QR redemptions. Built during NS to stay sharp.",
+    tagline: "A production-grade café platform with customer ordering, loyalty tiers, and QR redemptions.",
     codeSnippet: {
       lang: "javascript",
       code: `// JWT auth middleware — Leo's Cafe
