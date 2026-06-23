@@ -139,12 +139,11 @@ export default function Home() {
                   Leo Leong
                 </h1>
                 <p style={{ fontSize: "0.9375rem", fontWeight: 500, marginBottom: "0.875rem" }}>
-                  <span style={{ color: "#7a756e" }}>Aspiring </span>
+                  <span style={{ color: "#c9a87c" }}>Aspiring </span>
                   <span style={{ color: "#d98e4f" }}>Software Engineer</span>
                 </p>
-                <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "#7a756e", maxWidth: "26ch" }}>
-                  Side projects outside of work and school. 
-                  Cybersecurity by Training — Software Engineering by Passion.
+                <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "#7a756e" }}>
+                  Cybersecurity by Training · Software Engineering by Passion
                 </p>
               </div>
 
