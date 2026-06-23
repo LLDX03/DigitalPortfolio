@@ -219,16 +219,16 @@ export default function Home() {
               <p className="section-label">About</p>
               <div style={{ display: "flex", flexDirection: "column", gap: "1.125rem", marginBottom: "2rem" }}>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
-                  I am a Cybersecurity &amp; Digital Forensics graduate from <Hl>Temasek Polytechnic</Hl>, admitted to the Director&apos;s List for AY2021/2022.
+                  I am a Cybersecurity &amp; Digital Forensics graduate from <Hl>Temasek Polytechnic</Hl>, admitted to the <Hl>Director&apos;s List</Hl> for AY2021/2022.
                 </p>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
                   Studying cybersecurity gave me a strong technical foundation, but somewhere along the way, building things took over.
                 </p>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
-                  I am currently serving National Service and will ORD on 1 August 2026. As a Vehicle Commander, every system in the vehicle is mine to own. From physical things like radio set to systems like RCWS and BMS. I learn fast because I have no choice. NS has shaped me to operate independently, perform under pressure, and take full ownership of whatever is in front of me. In my spare time, I build software projects to stay sharp and keep growing as a developer.
+                  I am currently serving National Service and will ORD on <Hl>1 August 2026</Hl>. As a Vehicle Commander, every system in the vehicle is mine to own. From physical things like radio set to systems like <Hl>RCWS</Hl> and <Hl>BMS</Hl>. I learn fast because I have no choice. NS has shaped me to operate independently, perform under pressure, and take full ownership of whatever is in front of me. In my spare time, I build software projects to stay sharp and keep growing as a developer.
                 </p>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
-                  With a strong foundation in cybersecurity and a growing passion for software engineering, I stay up to date with developments in AI and leverage AI tools effectively to enhance my learning, productivity, and development workflow.
+                  With a strong foundation in cybersecurity and a growing passion for software engineering, I stay up to date with developments in <Hl>AI</Hl> and leverage AI tools effectively to enhance my learning, productivity, and development workflow.
                 </p>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
                   My goal is to become a software engineer who combines strong development expertise with a cybersecurity mindset.
