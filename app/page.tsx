@@ -142,7 +142,8 @@ export default function Home() {
                   Software Engineer
                 </p>
                 <p style={{ fontSize: "0.875rem", lineHeight: 1.75, color: "#7a756e", maxWidth: "26ch" }}>
-                  Side projects outside of work and school. Cybersecurity by Training — Software Engineering by Passion.
+                  Side projects outside of work and school. 
+                  Cybersecurity by Training — Software Engineering by Passion.
                 </p>
               </div>
 
@@ -219,16 +220,19 @@ export default function Home() {
               <p className="section-label">About</p>
               <div style={{ display: "flex", flexDirection: "column", gap: "1.125rem", marginBottom: "2rem" }}>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
-                  I&apos;m a Cybersecurity &amp; Digital Forensics diploma graduate from{" "}
-                  <Hl>Temasek Polytechnic</Hl>, where I graduated on the Director&apos;s List with distinctions in networking and development. I interned at{" "}
-                  <Hl>Trend Micro</Hl> as a technical intern, working alongside Sales Engineers and TAMs on client-facing cybersecurity solutions.
+                  I am a Cybersecurity &amp; Digital Forensics graduate from <Hl>Temasek Polytechnic</Hl> and was admitted to the Director&apos;s List for AY2021/2022 in recognition of my academic performance.
                 </p>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
-                  I&apos;m currently serving National Service, using my spare time to build production-grade projects — a full-stack café platform with JWT auth and loyalty tiers, and a machine learning model that predicts HDB resale prices across Singapore. My goal is to pursue a{" "}
-                  <Hl>Computer Science degree</Hl> and grow into a software engineer who thinks like a security specialist.
+                  During my internship at <Hl>Trend Micro</Hl>, I worked as a Technical Intern where I developed Proof-of-Concept (POC) documentation used by Sales Engineers in client presentations. I also identified an opportunity to improve team efficiency and independently built a Python script that automated client email outreach, reducing manual effort for the Sales Engineering team.
                 </p>
                 <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
-                  When I&apos;m not coding, I&apos;m reading about system design, backend architecture, and the engineering decisions behind the products I use every day.
+                  I am currently serving National Service and will ORD on 1 August 2026. In my spare time, I build software projects to strengthen my development skills. This includes a full-stack café platform with JWT authentication and loyalty tiers, as well as a machine learning model that predicts HDB resale prices across Singapore.
+                </p>
+                <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
+                  With a strong foundation in cybersecurity and a growing passion for software engineering, I enjoy learning new technologies, solving real-world problems, and building secure, scalable applications. I also stay up to date with developments in AI and leverage AI tools effectively to enhance my learning, productivity, and software development workflow.
+                </p>
+                <p style={{ fontSize: "0.9375rem", lineHeight: 1.8, color: "#8a857e" }}>
+                  My goal is to become a software engineer who combines strong development expertise with a cybersecurity mindset.
                 </p>
               </div>
               <a
