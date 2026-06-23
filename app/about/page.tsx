@@ -19,8 +19,8 @@ const work = [
     company: "Trend Micro",
     url: "https://www.trendmicro.com",
     description:
-      "Conducted controlled malware and virus injection across isolated VM environments to stress-test Trend Micro's threat detection and remediation capabilities across multiple attack scenarios. Translated findings into POC documentation adopted by Sales Engineers for enterprise client presentations, bridging the gap between technical validation and commercial delivery.",
-    tech: ["Cybersecurity", "VM Environments", "Technical Documentation"],
+      "Conducted controlled malware and virus injection across isolated VM environments to stress-test Trend Micro's threat detection and remediation capabilities across multiple attack scenarios. Translated findings into POC documentation adopted by Sales Engineers for enterprise client presentations, bridging the gap between technical validation and commercial delivery. Independently built a Python script that automated client email outreach, reducing manual effort for the Sales Engineering team.",
+    tech: ["Cybersecurity", "VM Environments", "Python", "Technical Documentation"],
   },
   {
     period: "2019 – 2024",
@@ -28,7 +28,7 @@ const work = [
     company: "Retail · Banquet · F&B · Warehouse",
     url: null as string | null,
     description:
-      "Worked across retail, banquet, F&B, and warehouse environments simultaneously with studies. Handled customer escalations, managed high-volume service under time pressure, and coordinated logistics in fast-paced operations. Developing the reliability and composure that formal education doesn't teach.",
+      "Worked across retail, banquet, F&B, and warehouse environments simultaneously with studies. Handled customer escalations, managed high-volume service under time pressure, and coordinated logistics in fast-paced operations. Developed the reliability and composure that formal education doesn't teach.",
   },
 ];
 

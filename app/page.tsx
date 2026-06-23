@@ -53,8 +53,8 @@ const work = [
     company: "Trend Micro",
     url: "https://www.trendmicro.com",
     description:
-      "Conducted controlled malware and virus injection across isolated VM environments to stress-test Trend Micro's threat detection and remediation capabilities across multiple attack scenarios. Translated findings into POC documentation adopted by Sales Engineers for enterprise client presentations, bridging the gap between technical validation and commercial delivery.",
-    tech: ["Cybersecurity", "VM Environments", "Technical Documentation"],
+      "Conducted controlled malware and virus injection across isolated VM environments to stress-test Trend Micro's threat detection and remediation capabilities across multiple attack scenarios. Translated findings into POC documentation adopted by Sales Engineers for enterprise client presentations, bridging the gap between technical validation and commercial delivery. Independently built a Python script that automated client email outreach, reducing manual effort for the Sales Engineering team.",
+    tech: ["Cybersecurity", "VM Environments", "Python", "Technical Documentation"],
   },
 ];
 
@@ -356,49 +356,27 @@ function ExperienceCard({ exp }: { exp: (typeof work)[0] }) {
       }}
     >
       <p className="card-period">{exp.period}</p>
-      <div>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", flexWrap: "wrap", marginBottom: "0.35rem" }}>
-          <span style={{ fontSize: "0.9375rem", fontWeight: 500, color: "#e8e3db" }}>{exp.role}</span>
-          {exp.url ? (
-            <a
-              href={exp.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.2rem",
-                fontSize: "0.9375rem",
-                color: hovered ? "#d98e4f" : "#6b6660",
-                textDecoration: "none",
-                transition: "color 0.15s",
-              }}
-            >
-              · {exp.company} <ArrowUpRight size={12} />
-            </a>
-          ) : (
-            <span style={{ fontSize: "0.9375rem", color: "#4d4944" }}>· {exp.company}</span>
-          )}
-        </div>
-        <p style={{ fontSize: "0.875rem", lineHeight: 1.7, color: "#5c5955", marginBottom: exp.tech?.length ? "0.875rem" : 0 }}>
-          {exp.description}
-        </p>
-        {exp.tech && exp.tech.length > 0 && (
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.375rem" }}>
-            {exp.tech.map((t) => (
-              <span key={t} style={{
-                fontSize: "0.6875rem",
-                fontWeight: 500,
-                color: "#d98e4f",
-                background: "rgba(217,142,79,0.08)",
-                borderRadius: "4px",
-                padding: "0.2rem 0.55rem",
-                letterSpacing: "0.02em",
-              }}>
-                {t}
-              </span>
-            ))}
-          </div>
+      <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", flexWrap: "wrap" }}>
+        <span style={{ fontSize: "0.9375rem", fontWeight: 500, color: "#e8e3db" }}>{exp.role}</span>
+        {exp.url ? (
+          <a
+            href={exp.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.2rem",
+              fontSize: "0.9375rem",
+              color: hovered ? "#d98e4f" : "#6b6660",
+              textDecoration: "none",
+              transition: "color 0.15s",
+            }}
+          >
+            · {exp.company} <ArrowUpRight size={12} />
+          </a>
+        ) : (
+          <span style={{ fontSize: "0.9375rem", color: "#4d4944" }}>· {exp.company}</span>
         )}
       </div>
     </div>
