@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data";
 import { PageNav } from "@/components/layout/PageNav";
 
@@ -143,7 +144,7 @@ export default function ProjectsPage() {
                         "rgba(217,142,79,0.3)")
                     }
                   >
-                    View code →
+                    View code <ArrowUpRight size={13} />
                   </Link>
                 )}
                 {project.liveUrl && (
@@ -167,7 +168,7 @@ export default function ProjectsPage() {
                         "rgba(217,142,79,0.3)")
                     }
                   >
-                    Live demo →
+                    Live demo <ArrowUpRight size={13} />
                   </Link>
                 )}
               </div>
