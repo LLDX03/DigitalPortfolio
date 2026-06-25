@@ -2,6 +2,8 @@
 
 Personal portfolio for Leo Leong Ding Xuan — Cybersecurity & Digital Forensics diploma graduate. Deployed on Vercel.
 
+https://digitalportfolio-lldx.vercel.app/
+
 ## Project Structure
 
 ```
