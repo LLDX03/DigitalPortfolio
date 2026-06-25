@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { siteConfig } from "@/data";
 
@@ -46,6 +47,7 @@ export default function RootLayout({
     <html lang="en" className={`${newsreader.variable} ${inter.variable}`}>
       <body className="antialiased min-h-screen" style={{ background: "#15161A", color: "#f0ece4" }}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
